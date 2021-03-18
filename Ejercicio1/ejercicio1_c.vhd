@@ -1,9 +1,7 @@
--- Puerta not: 1 entrada.
-
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity not1 is
+entity not1 is    -- Puerta not: 1 entrada.
     port(
         x: in std_logic;
         F: out std_logic
@@ -15,13 +13,10 @@ begin
     F <= not x;
 end architecture not1;
 
-
--- Puerta lógica and: 2 entradas.
-
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity and1 is
+entity and1 is  -- Puerta lógica and: 2 entradas.
     port(
         x,y: in std_logic;
         F: out std_logic
@@ -33,12 +28,10 @@ begin
     F <= x and y;
 end architecture and1;
 
--- Puerta lógica or: 2 entradas.
-
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity or1 is
+entity or1 is  -- Puerta lógica or: 2 entradas.
     port(
         x,y: in std_logic;
         F: out std_logic
