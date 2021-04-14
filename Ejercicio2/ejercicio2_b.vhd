@@ -82,11 +82,11 @@ architecture ejercicio2_b of ejercicio2_b is
             report "Comienza la simulacion";
             E <= '0';
             for g in 0 to 3 loop
-                for i in 0 to 2**7-1 loop
-                    for j in 0 to 2**7-1 loop
+                for i in -2**7 to 2**7-1 loop
+                    for j in -2**7 to 2**7-1 loop
                         sel <= std_logic_vector(to_unsigned(g,2)); --Bucle sel 00|01|10|11
-                        X <= std_logic_vector(to_unsigned(i,8)); --Bucle X
-                        Y <= std_logic_vector(to_unsigned(j,8)); --Bucle Y
+                        X <= std_logic_vector(to_signed(i,8)); --Bucle X
+                        Y <= std_logic_vector(to_signed(j,8)); --Bucle Y
                         wait for 10 ns;
                         check_ALU(X,Y,sel,E,NUM1,error_count);
                     end loop;
@@ -94,11 +94,11 @@ architecture ejercicio2_b of ejercicio2_b is
             end loop;
             E <= '1';
             for g in 0 to 3 loop
-                for i in 0 to 2**7-1 loop
-                    for j in 0 to 2**7-1 loop
+                for i in -2**7 to 2**7-1 loop
+                    for j in -2**7 to 2**7-1 loop
                         sel <= std_logic_vector(to_unsigned(g,2)); --Bucle sel 00|01|10|11
-                        X <= std_logic_vector(to_unsigned(i,8)); --Bucle X
-                        Y <= std_logic_vector(to_unsigned(j,8)); --Bucle Y
+                        X <= std_logic_vector(to_signed(i,8)); --Bucle X
+                        Y <= std_logic_vector(to_signed(j,8)); --Bucle Y
                         wait for 10 ns;
                         check_ALU(X,Y,sel,E,NUM1,error_count);
                     end loop;
